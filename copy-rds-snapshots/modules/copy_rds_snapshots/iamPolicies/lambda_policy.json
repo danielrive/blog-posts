@@ -1,0 +1,41 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": [
+                "${LOGS_GROUP_ARN}:*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "rds:CopyDBSnapshot",
+                "rds:Describe*",
+                "rds:AddTagsToResource"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:ListGrants",
+                "kms:RevokeGrant",
+                "kms:GenerateDataKey",
+                "kms:CreateGrant"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
